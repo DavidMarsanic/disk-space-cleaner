@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disk Space Cleaner</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="app">
+
+  <div id="error" class="error hidden"></div>
+
+  <section id="intro" class="intro">
+    <p class="intro-title">Find safe-to-clear cache space</p>
+    <p class="intro-sub">Checks well-known package manager, build tool, and browser caches — nothing outside those specific locations, nothing that needs admin access. Everything found goes to the Trash, not permanently deleted.</p>
+    <button id="scanBtn" class="btn primary" type="button">Scan for space to free up</button>
+  </section>
+
+  <section id="scanning" class="scanning hidden">
+    <div class="spinner"></div>
+    <p id="scanningMessage" class="scanning-message">Starting…</p>
+  </section>
+
+  <section id="results" class="results hidden">
+    <div class="results-header">
+      <span id="totalFound" class="total-found"></span>
+      <button id="rescanBtn" class="link-btn" type="button">Scan again</button>
+    </div>
+
+    <div id="categoryList" class="category-list"></div>
+
+    <div class="action-bar">
+      <button id="cleanBtn" class="btn primary" type="button">Move selected to Trash</button>
+      <span id="cleanStatus" class="clean-status"></span>
+    </div>
+  </section>
+
+  <section id="trashSection" class="trash-section">
+    <div class="trash-header">
+      <span class="trash-title">Trash</span>
+      <span id="trashInfo" class="trash-info">Checking…</span>
+    </div>
+    <div class="trash-actions">
+      <button id="emptyTrashBtn" class="btn danger" type="button" disabled>Empty Trash</button>
+      <span id="trashStatus" class="trash-status"></span>
+    </div>
+  </section>
+
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
